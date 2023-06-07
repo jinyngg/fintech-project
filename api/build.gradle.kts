@@ -11,8 +11,10 @@ dependencies {
     // Swagger 적용을 위한 의존성 추가
     implementation("io.springfox:springfox-boot-starter:3.0.0")
 
+    implementation(project(":domain"))
+
     // test 를 적용하기 위한 mockk 의존성 추가
     testImplementation("io.mockk:mockk:1.12.0")
 
-    implementation(project(":domain"))
+    runtimeOnly("com.h2database:h2")
 }
