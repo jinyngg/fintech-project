@@ -22,7 +22,7 @@ class LoanRequestServiceImpl(
         saveUserInfo(loanRequestInputDto.toUserInfoDto(userKey))
 
         // 심사 로직 개발 전
-        loanRequestReview("")
+//        loanRequestReview("")
 
         return LoanRequestDto.LoanRequestResponseDto(userKey)
     }

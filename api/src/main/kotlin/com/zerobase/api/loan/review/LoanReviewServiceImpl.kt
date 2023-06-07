@@ -25,8 +25,8 @@ class LoanReviewServiceImpl(
         val loanReview = loanReviewRepository.findByUserKey(userKey)
         return LoanReviewDto.LoanReview(
                 loanReview!!.userKey,
-                userLimitAmount = loanReview.loanLimitedAmount,
-                userLoanInterest = loanReview.loanInterest
+                loanReview.loanLimitedAmount,
+                loanReview.loanInterest
         )
     }
 }
