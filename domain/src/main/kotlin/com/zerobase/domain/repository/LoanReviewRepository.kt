@@ -4,5 +4,6 @@ import com.zerobase.domain.domain.LoanReview
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface LoanReviewRepository : JpaRepository<LoanReview, Long> {
+    // ? -> nullable 처리
     fun findByUserKey(userKey: String): LoanReview?
 }
