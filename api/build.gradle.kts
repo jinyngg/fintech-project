@@ -22,4 +22,8 @@ dependencies {
     // AOP 의존성 추가
     implementation("org.springframework.boot:spring-boot-starter-aop")
 
+    // Logging 의존성 추가
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.4")
+
+
 }
