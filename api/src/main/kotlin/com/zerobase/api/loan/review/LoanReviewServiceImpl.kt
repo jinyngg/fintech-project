@@ -4,6 +4,7 @@ import com.zerobase.api.exception.CustomErrorCode
 import com.zerobase.api.exception.CustomException
 import com.zerobase.domain.domain.LoanReview
 import com.zerobase.domain.repository.LoanReviewRepository
+import org.springframework.cache.annotation.Cacheable
 import org.springframework.stereotype.Service
 
 @Service
@@ -23,6 +24,7 @@ class LoanReviewServiceImpl(
 
     // Only safe (?.) or non-null asserted (!!.) 관련 에러 발생
     // loanReview.userKey -> loanReview!!.userKey
+    @Cacheable(value = ["REVIEW"], key = "#userKey", cacheManager = "redisCacheManager")
     override fun getLoanResult(userKey: String) =
             loanReviewRepository.findByUserKey(userKey)
 
